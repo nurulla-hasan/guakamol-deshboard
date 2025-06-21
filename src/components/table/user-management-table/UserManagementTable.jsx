@@ -12,7 +12,7 @@ const ClientsAndPlantsTable = ({ paged, handleBlock, handleView }) => {
             <th>SL</th>
             <th>Name</th>
             <th>Email</th>
-            <th>client</th>
+            <th>Client</th>
             <th>Status</th>
             <th>Action</th>
           </tr>

@@ -52,7 +52,7 @@ const UserViewModal = ({ setViewModal, viewModal, data }) => {
                         </div>
                         <h2 className="text-lg font-bold mb-1">{data?.userName || "Nadim"}</h2>
                         <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium">
-                            Active Employee
+                            <span>{data?.status}</span>
                         </div>
                     </div>
                 </div>

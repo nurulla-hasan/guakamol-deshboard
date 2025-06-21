@@ -1,10 +1,12 @@
 "use client";
 import PageContainer from "@/components/container/PageContainer";
+import ConfirmModal from "@/components/modal/confirm-modal/ConfirmModal";
 import UserViewModal from "@/components/modal/user-view-modal/UserViewModal";
 import Pagination from "@/components/pagination/Pagination";
 import UserManagementTable from "@/components/table/user-management-table/UserManagementTable";
 import { userData } from "@/data/data";
 import { useState } from "react";
+import { set } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
 
 const clientsAndPlants = () => {
@@ -12,6 +14,7 @@ const clientsAndPlants = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
   const [viewModal, setViewModal] = useState(false);
+  const [confirmModal, setConfirmModal] = useState(false);
 
   const [selectedUser, setSelectedUser] = useState(null);
   const handleView = (user) => {
@@ -21,6 +24,7 @@ const clientsAndPlants = () => {
 
   // handle block
   const handleBlock = (_id) => {
+    setConfirmModal(true);
     console.log(_id);
   };
 
@@ -71,6 +75,14 @@ const clientsAndPlants = () => {
         viewModal={viewModal}
         data={selectedUser}
       />
+
+      {/* Confirm Modal */}
+      <ConfirmModal
+        setConfirmModal={setConfirmModal}
+        confirmModal={confirmModal}
+        handleBlock={handleBlock}
+      />
+
     </PageContainer>
   );
 };

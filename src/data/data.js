@@ -1021,7 +1021,7 @@ export const userData = [
     userName: "Alice Johnson",
     photoUrl: "https://api.dicebear.com/8.x/initials/svg?seed=Alice+Johnson",
     plantName: "Research Hub Alpha",
-    status: "Active",
+    status: "Inactive",
     weeklyMealSchedule: [
       {
         day: "Sunday",
