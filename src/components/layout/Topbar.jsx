@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 const Topbar = () => {
 
-    const user = useSelector(state => state.auth.user) 
+    const user = useSelector(state => state.auth.user)
 
     return (
         <>
@@ -15,13 +15,16 @@ const Topbar = () => {
                         <IoMdNotificationsOutline color='#fff' size={16} />
                     </Link>
                 </button>
-                <Image
-                    src="/images/avatar.png"
-                    width={40}
-                    height={40}
-                    alt="User"
-                    className="rounded-full cursor-pointer border-2 border-primary"
-                />
+                <Link href={"/settings/profile"}>
+                    <Image
+                        src="/images/avatar.jpg"
+                        width={40}
+                        height={40}
+                        alt="User"
+                        className="rounded-full w-10 h-10 cursor-pointer border-2 border-primary"
+                        priority
+                    />
+                </Link>
                 <span className="text-sm font-medium text-black">{user?.name || "Kristin Watson"}</span>
             </div>
         </>
