@@ -1,4 +1,4 @@
-import { IoIosArrowDown } from "react-icons/io";
+"use client";
 
 const SelectField = ({
   label,
@@ -19,7 +19,7 @@ const SelectField = ({
       <select
         id={name}
         {...register(name, { required })}
-        className="w-full border border-gray-300 px-2 py-1.5 rounded-sm text-xs text-gray-500 font-normal outline-none appearance-none"
+        className="w-full border border-gray-300 px-2 py-1.5 rounded-sm text-xs text-gray-500 font-normal focus:outline-none focus:ring-1 focus:ring-primary outline-none appearance-none transition-all duration-300"
       >
         <option value="">{defaultOption}</option>
         {options.map((opt) => (
@@ -28,7 +28,7 @@ const SelectField = ({
           </option>
         ))}
       </select>
-        <div className="absolute top-1/2 right-2 transform text-gray-400"><IoIosArrowDown /></div>
+        
       {error && <p className="text-xs text-red-500 mt-0.5">{error.message}</p>}
     </div>
   );

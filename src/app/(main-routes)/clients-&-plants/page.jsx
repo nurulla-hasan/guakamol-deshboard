@@ -2,6 +2,7 @@
 import PageContainer from "@/components/container/PageContainer";
 import AddClientModal from "@/components/modal/add-client-modal/AddClientModal";
 import ClientsAndPlantsModal from "@/components/modal/clients-plants-view-modal/ClientsAndPlantsModal";
+import ConfirmModal from "@/components/modal/confirm-modal/ConfirmModal";
 import Pagination from "@/components/pagination/Pagination";
 import ClientsAndPlantsTable from "@/components/table/clients-plants-table/ClientsAndPlantsTable";
 import { companies } from "@/data/data";
@@ -16,6 +17,7 @@ const clientsAndPlants = () => {
   const [query, setQuery] = useState("");
   const [viewModal, setViewModal] = useState(false)
   const [addModal, setAddModal] = useState(false)
+  const [confirmModal, setConfirmModal] = useState(false);
 
   const [selectedCompany, setSelectedCompany] = useState(null);
   const handleView = (Company) => {
@@ -25,6 +27,8 @@ const clientsAndPlants = () => {
 
   // handle block
   const handleBlock = (_id) => {
+    setConfirmModal(true);
+    // alert("Blocked")
     console.log(_id);
   };
 
@@ -75,6 +79,13 @@ const clientsAndPlants = () => {
 
       {/* Add Client Modal */}
       <AddClientModal {...{addModal, setAddModal}}/>
+
+      {/* Confirm Modal */}
+      <ConfirmModal
+        setConfirmModal={setConfirmModal}
+        confirmModal={confirmModal}
+        message="Are you sure you want to block this company?"
+      />
 
     </PageContainer>
   );

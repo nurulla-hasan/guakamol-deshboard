@@ -1,11 +1,132 @@
-import React from 'react';
+"use client";
+import { MapPin, ChevronDown, Edit, Calendar } from "lucide-react"; // Calendar আইকন আর লাগবে না
+import PageContainer from "@/components/container/PageContainer";
+import ConfirmModal from "@/components/modal/confirm-modal/ConfirmModal";
+import UserViewModal from "@/components/modal/user-view-modal/UserViewModal";
+import Pagination from "@/components/pagination/Pagination";
+import WeeklyMenuTable from "@/components/table/weekly-menu-table/WeeklyMenuTable";
+import { weeklyMenu } from "@/data/data";
+import { useState } from "react";
+import SelectField from "@/components/helper/select-helper/SelectField";
+import { useForm } from "react-hook-form";
+import { IoIosArrowDown } from "react-icons/io";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { subMonths, addMonths, format } from 'date-fns';
 
-const page = () => {
+const WeeklyMenuPage = () => {
+  const pageSize = 10;
+  const [page, setPage] = useState(1);
+  const [viewModal, setViewModal] = useState(false);
+  const [confirmModal, setConfirmModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const [startDate, setStartDate] = useState(new Date());
+
+  // React Hook Form
+  const { register, watch, setValue } = useForm({
+    defaultValues: {
+      selectedMealType: "",
+    },
+  });
+
+  const selectedMealType = watch("selectedMealType");
+  console.log(startDate, selectedMealType);
+
+
+  // Meal type options
+  const mealTypeOptions = [
+    { value: "breakfast", label: "Breakfast" },
+    { value: "lunch", label: "Lunch" },
+    { value: "dinner", label: "Dinner" },
+    { value: "snacks", label: "Snacks" },
+  ];
+
+  const handleView = (item) => {
+    setSelectedItem(item);
+    setViewModal(true);
+  };
+
+  const handleBlock = (_id) => {
+    setConfirmModal(true);
+    console.log(_id);
+  };
+
+  const pageCount = Math.ceil(weeklyMenu.length / pageSize);
+  const paged = weeklyMenu.slice((page - 1) * pageSize, page * pageSize);
+
   return (
-    <div>
-      weekly-menu
-    </div>
+    <PageContainer>
+      <div className="flex justify-between items-center mb-2">
+        <h1 className="font-medium">Weekly Menu</h1>
+        <div className="flex gap-2 items-end">
+          {/* DatePicker Component */}
+          <div className="min-w-[140px] relative">
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => setStartDate(date)}
+              dateFormat="dd/MM/yyyy"
+              className="w-full px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 focus:outline-none focus:ring-1 focus:ring-primary"
+              customInput={
+                <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200">
+                  <Calendar className="h-4 w-4" />
+                  {startDate ? format(startDate, 'dd MMMM yyyy') : 'Select Date'}
+                  <IoIosArrowDown className="ml-1" />
+                </button>
+              }
+            />
+          </div>
+
+          {/* Select Meal Type Dropdown */}
+          <div className="min-w-[140px] relative">
+            <SelectField
+              name="selectedMealType"
+              options={mealTypeOptions}
+              register={register}
+              defaultOption="Select Meal Type"
+            />
+            <div className="absolute top-1/2 -translate-y-1/2 right-2 transform text-gray-400">
+              <IoIosArrowDown size={12} />
+            </div>
+          </div>
+
+          {/* Edit Button */}
+          <div>
+            <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200">
+              <Edit className="h-4 w-4" />
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* table */}
+      <div className="overflow-auto h-[76vh] scrl-hide rounded-md border border-gray-200">
+        <WeeklyMenuTable
+          paged={paged}
+          handleBlock={handleBlock}
+          handleView={handleView}
+        />
+      </div>
+
+      {/* Pagination */}
+      <Pagination {...{ page, setPage, pageCount, pageSize, filtered: weeklyMenu }} />
+
+      {/* View Modal */}
+      <UserViewModal
+        setViewModal={setViewModal}
+        viewModal={viewModal}
+        data={selectedItem}
+      />
+
+      {/* Confirm Modal */}
+      <ConfirmModal
+        setConfirmModal={setConfirmModal}
+        confirmModal={confirmModal}
+        message="Are you sure you want to block this item?"
+      />
+    </PageContainer>
   );
 };
 
-export default page;
+export default WeeklyMenuPage;

@@ -6,7 +6,6 @@ import Pagination from "@/components/pagination/Pagination";
 import UserManagementTable from "@/components/table/user-management-table/UserManagementTable";
 import { userData } from "@/data/data";
 import { useState } from "react";
-import { set } from "react-hook-form";
 import { FiSearch } from "react-icons/fi";
 
 const clientsAndPlants = () => {
@@ -80,7 +79,7 @@ const clientsAndPlants = () => {
       <ConfirmModal
         setConfirmModal={setConfirmModal}
         confirmModal={confirmModal}
-        handleBlock={handleBlock}
+        message="Are you sure you want to block this user?"
       />
 
     </PageContainer>

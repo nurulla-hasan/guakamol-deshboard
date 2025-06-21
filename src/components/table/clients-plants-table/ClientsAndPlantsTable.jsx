@@ -1,5 +1,5 @@
-import { FaRegEye } from "react-icons/fa";
-import { MdBlockFlipped } from "react-icons/md";
+"use client";
+import { MdBlockFlipped, MdOutlineRemoveRedEye } from "react-icons/md";
 
 const ClientsAndPlantsTable = ({ paged, handleBlock, handleView }) => {
     return (
@@ -25,19 +25,21 @@ const ClientsAndPlantsTable = ({ paged, handleBlock, handleView }) => {
                             <td>{company?.plants}</td>
                             <td>{company?.activeEmployees}</td>
                             <td>{company?.status}</td>
-                            <td className="flex justify-center gap-3">
-                                <button
-                                    onClick={()=>handleView(company)}
-                                    className=" flex items-center justify-center rounded cursor-pointer text-gray-500"
-                                >
-                                    <FaRegEye size={18} />
-                                </button>
-                                <button
-                                    onClick={() => handleBlock(company?._id)}
-                                    className={` flex items-center justify-center rounded cursor-pointer text-red-400`}
-                                >
-                                    <MdBlockFlipped size={18} />
-                                </button>
+                            <td>
+                                <div className="flex justify-center items-center gap-2">
+                                    <button
+                                        onClick={() => handleView(company)}
+                                        className="text-primary hover:text-primary/80 cursor-pointer p-1 rounded-sm bg-primary/10 transition-all duration-200"
+                                    >
+                                        <MdOutlineRemoveRedEye size={18} />
+                                    </button>
+                                    <button
+                                        onClick={() => handleBlock(company?._id)}
+                                        className="text-red-400 hover:text-red-600 cursor-pointer p-1 rounded-sm bg-red-100 transition-all duration-200"
+                                    >
+                                        <MdBlockFlipped size={18} />
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     ))}

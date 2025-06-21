@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import InputField from "@/components/helper/input-helper/InputField";
 import SelectField from "@/components/helper/select-helper/SelectField";
+import { IoIosArrowDown } from "react-icons/io";
 
 const AddClientModal = ({ addModal, setAddModal, }) => {
     const {
@@ -80,18 +81,20 @@ const AddClientModal = ({ addModal, setAddModal, }) => {
                         />
                     </div>
 
-                    <SelectField
-                        label="Status"
-                        name="status"
-                        register={register}
-                        required={true}
-                        error={errors.status}
-                        options={[
-                            { label: "Active", value: "Active" },
-                            { label: "Inactive", value: "Inactive" },
-                        ]}
-                    />
-
+                    <div className="relative">
+                        <SelectField
+                            label="Status"
+                            name="status"
+                            register={register}
+                            required={true}
+                            error={errors.status}
+                            options={[
+                                { label: "Active", value: "Active" },
+                                { label: "Inactive", value: "Inactive" },
+                            ]}
+                        />
+                        <div className="absolute top-4/7 right-2 transform text-gray-400"><IoIosArrowDown /></div>
+                    </div>
                     <InputField
                         label="Logo Image"
                         name="companyPhoto"

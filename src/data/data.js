@@ -1483,3 +1483,175 @@ export const userData = [
     ],
   },
 ];
+
+// weekly menu
+export const weeklyMenu = [
+  {
+    "_id": "665ccdf23f1a3e98a94e2201",
+    "dishName": "Thai Chicken",
+    "mealType": ["Lunch"],
+    "company": "Innovate Solutions",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "354 Kcal",
+      "protein": "25g",
+      "fat": "10g",
+      "allergens": "None"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2202",
+    "dishName": "Grilled Salmon",
+    "mealType": ["Dinner"],
+    "company": "XYZ Corp",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "420 Kcal",
+      "protein": "35g",
+      "fat": "18g",
+      "allergens": "Fish"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2203",
+    "dishName": "Veggie Omelette",
+    "mealType": ["Breakfast"],
+    "company": "ABC Group",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "230 Kcal",
+      "protein": "14g",
+      "fat": "12g",
+      "allergens": "Egg"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2204",
+    "dishName": "Beef Stir Fry",
+    "mealType": ["Lunch", "Dinner"],
+    "company": "Foodies Inc",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "480 Kcal",
+      "protein": "40g",
+      "fat": "22g",
+      "allergens": "Soy"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2205",
+    "dishName": "Quinoa Salad",
+    "mealType": ["Lunch"],
+    "company": "Healthy Bites",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "310 Kcal",
+      "protein": "12g",
+      "fat": "9g",
+      "allergens": "None"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2206",
+    "dishName": "Chicken Caesar Wrap",
+    "mealType": ["Lunch"],
+    "company": "ABC Group",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "390 Kcal",
+      "protein": "28g",
+      "fat": "16g",
+      "allergens": "Gluten, Dairy"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2207",
+    "dishName": "Pancakes with Syrup",
+    "mealType": ["Breakfast"],
+    "company": "XYZ Corp",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "450 Kcal",
+      "protein": "8g",
+      "fat": "14g",
+      "allergens": "Gluten, Dairy"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2208",
+    "dishName": "Tofu Teriyaki",
+    "mealType": ["Dinner"],
+    "company": "Healthy Bites",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "340 Kcal",
+      "protein": "20g",
+      "fat": "11g",
+      "allergens": "Soy"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2209",
+    "dishName": "Turkey Sandwich",
+    "mealType": ["Lunch"],
+    "company": "Foodies Inc",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "370 Kcal",
+      "protein": "26g",
+      "fat": "13g",
+      "allergens": "Gluten"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2210",
+    "dishName": "Miso Soup",
+    "mealType": ["Dinner"],
+    "company": "ABC Group",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "90 Kcal",
+      "protein": "5g",
+      "fat": "3g",
+      "allergens": "Soy"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2211",
+    "dishName": "Chickpea Curry",
+    "mealType": ["Lunch", "Dinner"],
+    "company": "Healthy Bites",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "400 Kcal",
+      "protein": "22g",
+      "fat": "17g",
+      "allergens": "None"
+    }
+  },
+  {
+    "_id": "665ccdf23f1a3e98a94e2212",
+    "dishName": "Fruit Yogurt Parfait",
+    "mealType": ["Breakfast"],
+    "company": "XYZ Corp",
+    "week": "Jan 25–31",
+    "menuImage": "/images/menu.png",
+    "nutrition": {
+      "calories": "300 Kcal",
+      "protein": "10g",
+      "fat": "6g",
+      "allergens": "Dairy"
+    }
+  }
+];

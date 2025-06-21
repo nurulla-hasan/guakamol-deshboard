@@ -1,6 +1,6 @@
 "use client"
 
-const ConfirmModal = ({ setConfirmModal, confirmModal, handleBlock }) => {
+const ConfirmModal = ({ setConfirmModal, confirmModal, message }) => {
   if (!confirmModal) return null
 
   const handleConfirm = () => {
@@ -33,7 +33,7 @@ const ConfirmModal = ({ setConfirmModal, confirmModal, handleBlock }) => {
           <div className="space-y-2">
             <h2 className="text-md font-bold text-red-500">Are you sure !</h2>
             <p className="text-gray-700 text-xs leading-relaxed">
-              Do you want to Block your Employee profile ?
+              {message}
             </p>
           </div>
 

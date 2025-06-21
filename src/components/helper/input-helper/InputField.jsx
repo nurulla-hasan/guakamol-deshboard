@@ -21,7 +21,7 @@ const InputField = ({
                 id={name}
                 type={type}
                 {...register(name, { required, ...registerOptions })}
-                className="w-full border border-gray-300 focus:border-primary px-2 py-1.5 rounded-sm text-xs placeholder:text-xs outline-none file:rounded-sm file:border-0 file:bg-gray-100 file:text-gray-600 file:text-xs file:py-1 file:px-3"
+                className="w-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary px-2 py-1.5 rounded-sm text-xs placeholder:text-xs outline-none transition-all duration-300 file:rounded-sm file:border-0 file:bg-gray-100 file:text-gray-600 file:text-xs file:py-1 file:px-3"
                 {...rest}
                 placeholder={placeholder}
             />
