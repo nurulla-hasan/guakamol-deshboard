@@ -1002,4 +1002,176 @@ export const companies = [
         "activeEmployees": 1050,
         "status": "Active"
       }
+]
+
+// User Data
+export const userData = [
+  {
+    "companyName": "Innovate Solutions Corp.",
+    "userEmail": "alice.johnson@innovatesol.com",
+    "plantName": "Research Hub Alpha",
+    "weeklyMealSchedule": [
+      { "Saturday": "Chicken & Veggie Stir-fry" },
+      { "Sunday": "Lentil Soup with Bread" },
+      { "Monday": "Pasta Primavera" },
+      { "Tuesday": "Grilled Fish and Salad" },
+      { "Wednesday": "Vegetable Curry, Rice" },
+      { "Thursday": "Beef Stew with Potatoes" },
+      { "Friday": "Pizza Night" }
     ]
+  },
+  {
+    "companyName": "Dynamic Edge Systems",
+    "userEmail": "bob.brown@dynamicedge.net",
+    "plantName": "Assembly Line One",
+    "weeklyMealSchedule": [
+      { "Saturday": "Biryani (Chicken)" },
+      { "Sunday": "Mixed Vegetable Curry, Roti" },
+      { "Monday": "Dal Makhani, Rice" },
+      { "Tuesday": "Tandoori Chicken, Naan" },
+      { "Wednesday": "Paneer Butter Masala, Rice" },
+      { "Thursday": "Mutton Rogan Josh, Paratha" },
+      { "Friday": "Shahi Pulao, Kofta Curry" }
+    ]
+  },
+  {
+    "companyName": "Summit Tech Global",
+    "userEmail": "carol.white@summitglobal.org",
+    "plantName": "Distribution Center X",
+    "weeklyMealSchedule": [
+      { "Saturday": "Burger and Fries" },
+      { "Sunday": "Caesar Salad with Chicken" },
+      { "Monday": "Spaghetti Bolognese" },
+      { "Tuesday": "Fish and Chips" },
+      { "Wednesday": "Chicken Sandwich, Soup" },
+      { "Thursday": "Ramen Noodle Bowl" },
+      { "Friday": "Taco Tuesday (on Friday!)" }
+    ]
+  },
+  {
+    "companyName": "Quantum Leap Analytics",
+    "userEmail": "dave.green@quantumleap.biz",
+    "plantName": "Data Center West",
+    "weeklyMealSchedule": [
+      { "Saturday": "Sushi Platter" },
+      { "Sunday": "Vegetable Korma, Pulao" },
+      { "Monday": "Grilled Salmon, Asparagus" },
+      { "Tuesday": "Chicken Quesadilla" },
+      { "Wednesday": "Black Bean Burger" },
+      { "Thursday": "Shrimp Stir-fry" },
+      { "Friday": "Beef Bulgogi, Rice" }
+    ]
+  },
+  {
+    "companyName": "Everest Ventures Ltd.",
+    "userEmail": "eve.black@everestventures.com",
+    "plantName": "Innovation Lab 7",
+    "weeklyMealSchedule": [
+      { "Saturday": "Hyderabadi Biryani (Lamb)" },
+      { "Sunday": "Chicken Handi, Naan" },
+      { "Monday": "Palak Paneer, Roti" },
+      { "Tuesday": "Aloo Gobi, Puri" },
+      { "Wednesday": "Kadhi Pakora, Rice" },
+      { "Thursday": "Bhindi Masala, Chapati" },
+      { "Friday": "Goat Curry, Rice" }
+    ]
+  },
+  {
+    "companyName": "Nexus Corporate Solutions",
+    "userEmail": "frank.gray@nexuscorp.com",
+    "plantName": "Client Services Hub",
+    "weeklyMealSchedule": [
+      { "Saturday": "Thai Green Curry, Rice" },
+      { "Sunday": "Falafel Wrap, Hummus" },
+      { "Monday": "Chicken Burrito Bowl" },
+      { "Tuesday": "Lentil and Vegetable Stew" },
+      { "Wednesday": "Tuna Melt Sandwich" },
+      { "Thursday": "Shepherd's Pie" },
+      { "Friday": "Fish Tacos" }
+    ]
+  },
+  {
+    "companyName": "Prime Digital Group",
+    "userEmail": "grace.hall@primedigital.net",
+    "plantName": "Software Development Center",
+    "weeklyMealSchedule": [
+      { "Saturday": "BBQ Ribs, Coleslaw" },
+      { "Sunday": "Roast Chicken, Gravy" },
+      { "Monday": "Turkey Sandwich, Salad" },
+      { "Tuesday": "Vegetable Soup, Grilled Cheese" },
+      { "Wednesday": "Quinoa Salad with Feta" },
+      { "Thursday": "Pork Chops, Apple Sauce" },
+      { "Friday": "Beef Brisket, Cornbread" }
+    ]
+  },
+  {
+    "companyName": "Horizon Technologies Inc.",
+    "userEmail": "henry.king@horizontech.org",
+    "plantName": "Hardware Testing Facility",
+    "weeklyMealSchedule": [
+      { "Saturday": "Chicken Tikka Masala, Rice" },
+      { "Sunday": "Dal Fry, Rice" },
+      { "Monday": "Egg Curry, Paratha" },
+      { "Tuesday": "Vegetable Pulao, Raita" },
+      { "Wednesday": "Chicken Kebab, Naan" },
+      { "Thursday": "Chana Masala, Puri" },
+      { "Friday": "Fish Korma, Rice" }
+    ]
+  },
+  {
+    "companyName": "OptiServe Systems",
+    "userEmail": "irene.lee@optiserve.biz",
+    "plantName": "Customer Support Center",
+    "weeklyMealSchedule": [
+      { "Saturday": "Chicken Noodle Soup" },
+      { "Sunday": "Garden Salad with Vinaigrette" },
+      { "Monday": "Turkey Meatloaf, Mashed Potatoes" },
+      { "Tuesday": "Chicken Pot Pie" },
+      { "Wednesday": "Broccoli Cheddar Soup" },
+      { "Thursday": "Sloppy Joes" },
+      { "Friday": "Macaroni and Cheese" }
+    ]
+  },
+  {
+    "companyName": "Bright Star Innovations",
+    "userEmail": "jack.moore@brightstar.com",
+    "plantName": "Product Design Studio",
+    "weeklyMealSchedule": [
+      { "Saturday": "Spicy Pork with Rice" },
+      { "Sunday": "Kimchi Stew" },
+      { "Monday": "Bibimbap" },
+      { "Tuesday": "Korean Fried Chicken" },
+      { "Wednesday": "Japchae" },
+      { "Thursday": "Bulgogi" },
+      { "Friday": "Tteokbokki" }
+    ]
+  },
+  {
+    "companyName": "Green Planet Solutions",
+    "userEmail": "karen.taylor@greenplanet.net",
+    "plantName": "Eco-Friendly Production",
+    "weeklyMealSchedule": [
+      { "Saturday": "Vegan Lentil Loaf" },
+      { "Sunday": "Roasted Vegetable Medley" },
+      { "Monday": "Chickpea Curry, Brown Rice" },
+      { "Tuesday": "Black Bean Tacos" },
+      { "Wednesday": "Mushroom Risotto" },
+      { "Thursday": "Sweet Potato and Kale Salad" },
+      { "Friday": "Spinach and Artichoke Pizza" }
+    ]
+  },
+  {
+    "companyName": "Swift Connect Ventures",
+    "userEmail": "leo.clark@swiftconnect.org",
+    "plantName": "Remote Operations Hub",
+    "weeklyMealSchedule": [
+      { "Saturday": "Fish and Chips" },
+      { "Sunday": "Beef and Guinness Pie" },
+      { "Monday": "Sausage and Mash" },
+      { "Tuesday": "Chicken Korma, Pilau Rice" },
+      { "Wednesday": "Vegetable Lasagna" },
+      { "Thursday": "Cottage Pie" },
+      { "Friday": "Indian Takeaway Night" }
+    ]
+  }
+]
