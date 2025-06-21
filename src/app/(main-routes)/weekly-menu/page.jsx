@@ -13,6 +13,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { subMonths, addMonths, format } from 'date-fns';
+import { IoAdd } from "react-icons/io5";
+import MenuViewModal from "@/components/modal/menu-view-modal/MenuViewModal";
 
 const WeeklyMenuPage = () => {
   const pageSize = 10;
@@ -90,11 +92,11 @@ const WeeklyMenuPage = () => {
             </div>
           </div>
 
-          {/* Edit Button */}
+          {/* Add Button */}
           <div>
             <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200">
-              <Edit className="h-4 w-4" />
-              Edit
+              <IoAdd className="h-4 w-4" />
+              Add
             </button>
           </div>
         </div>
@@ -113,7 +115,7 @@ const WeeklyMenuPage = () => {
       <Pagination {...{ page, setPage, pageCount, pageSize, filtered: weeklyMenu }} />
 
       {/* View Modal */}
-      <UserViewModal
+      <MenuViewModal
         setViewModal={setViewModal}
         viewModal={viewModal}
         data={selectedItem}
