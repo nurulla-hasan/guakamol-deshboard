@@ -1,5 +1,6 @@
 "use client"
 
+import { X } from "lucide-react"
 import Image from "next/image"
 
 const MenuViewModal = ({ viewModal, setViewModal, data }) => {
@@ -13,11 +14,9 @@ const MenuViewModal = ({ viewModal, setViewModal, data }) => {
           {/* Close Button */}
           <button
             onClick={() => setViewModal(false)}
-            className="absolute top-2 right-4 text-white/80 hover:text-white hover:bg-white/20 p-1 rounded-full transition-all duration-200"
+            className="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="w-5 h-5" />
           </button>
 
           {/* Menu Image */}
@@ -154,16 +153,6 @@ const MenuViewModal = ({ viewModal, setViewModal, data }) => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Fixed Action Button */}
-        <div className="flex-shrink-0 p-4 border-t border-gray-200 bg-white">
-          <button
-            onClick={() => setViewModal(false)}
-            className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-4 py-2 rounded-sm text-xs font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Close Menu Details
-          </button>
         </div>
       </div>
     </div>

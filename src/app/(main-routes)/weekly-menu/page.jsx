@@ -15,6 +15,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { subMonths, addMonths, format } from 'date-fns';
 import { IoAdd } from "react-icons/io5";
 import MenuViewModal from "@/components/modal/menu-view-modal/MenuViewModal";
+import AddMenuModal from "@/components/modal/add-menu-modal/AddMenuModal";
 
 const WeeklyMenuPage = () => {
   const pageSize = 10;
@@ -22,6 +23,7 @@ const WeeklyMenuPage = () => {
   const [viewModal, setViewModal] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [addMenuModal, setMenuAddModal] = useState(false);
 
   const [startDate, setStartDate] = useState(new Date());
 
@@ -33,7 +35,6 @@ const WeeklyMenuPage = () => {
   });
 
   const selectedMealType = watch("selectedMealType");
-  console.log(startDate, selectedMealType);
 
 
   // Meal type options
@@ -52,6 +53,12 @@ const WeeklyMenuPage = () => {
   const handleBlock = (_id) => {
     setConfirmModal(true);
     console.log(_id);
+  };
+
+
+  const handleAddMenu = () => {
+    console.log("add button clicked");
+    setMenuAddModal(true);
   };
 
   const pageCount = Math.ceil(weeklyMenu.length / pageSize);
@@ -94,7 +101,7 @@ const WeeklyMenuPage = () => {
 
           {/* Add Button */}
           <div>
-            <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200">
+            <button onClick={handleAddMenu} className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
               <IoAdd className="h-4 w-4" />
               Add
             </button>
@@ -119,6 +126,12 @@ const WeeklyMenuPage = () => {
         setViewModal={setViewModal}
         viewModal={viewModal}
         data={selectedItem}
+      />
+
+      {/* Add Menu Modal */}
+      <AddMenuModal
+        setMenuAddModal={setMenuAddModal}
+        addMenuModal={addMenuModal}
       />
 
       {/* Confirm Modal */}

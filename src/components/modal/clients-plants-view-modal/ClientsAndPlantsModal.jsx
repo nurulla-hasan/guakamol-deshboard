@@ -1,3 +1,4 @@
+import { X } from "lucide-react";
 import {
   FaEnvelope,
   FaRegAddressCard,
@@ -26,11 +27,11 @@ const ClientsAndPlantsModal = ({ setViewModal, viewModal, data }) => {
       <div className="bg-white rounded-lg w-full max-w-lg space-y-7 relative">
         {/* Close Button */}
         <button
-          onClick={() => setViewModal(false)}
-          className="absolute top-2 right-4 text-gray-200 hover:text-red-500 text-lg font-bold cursor-pointer"
-        >
-          ✕
-        </button>
+            onClick={() => setViewModal(false)}
+            className="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
+          >
+            <X className="w-5 h-5" />
+          </button>
 
         {/* Company Image + Name */}
         <div className="flex flex-col items-center gap-3 text-center bg-primary/90 p-8 rounded-lg">

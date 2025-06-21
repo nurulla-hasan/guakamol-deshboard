@@ -1,5 +1,7 @@
 "use client"
 
+import { X } from "lucide-react"
+
 const ConfirmModal = ({ setConfirmModal, confirmModal, message }) => {
   if (!confirmModal) return null
 
@@ -12,11 +14,11 @@ const ConfirmModal = ({ setConfirmModal, confirmModal, message }) => {
       <div className="bg-white rounded-sm w-full max-w-sm mx-auto shadow-2xl relative animate-in zoom-in-95 duration-300 overflow-hidden">
         {/* Close Button */}
         <button
-          onClick={() => setConfirmModal(false)}
-          className="absolute top-2 right-4 text-gray-500 hover:text-red-500 text-sm font-bold cursor-pointer"
-        >
-          ✕
-        </button>
+            onClick={() => setConfirmModal(false)}
+            className="absolute top-2 right-2 text-gray-500 hover:text-white hover:bg-black/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
+          >
+            <X className="w-5 h-5" />
+          </button>
 
         {/* Content */}
         <div className="p-8 text-center space-y-4">

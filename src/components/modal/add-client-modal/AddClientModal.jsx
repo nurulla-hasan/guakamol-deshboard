@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import InputField from "@/components/helper/input-helper/InputField";
 import SelectField from "@/components/helper/select-helper/SelectField";
 import { IoIosArrowDown } from "react-icons/io";
+import { X } from "lucide-react";
 
 const AddClientModal = ({ addModal, setAddModal, }) => {
     const {
@@ -28,10 +29,10 @@ const AddClientModal = ({ addModal, setAddModal, }) => {
         <div className="fixed inset-0 backdrop-blur-xs bg-black/50 flex items-center justify-center z-50">
             <div className="bg-white p-4 rounded-lg w-full max-w-md shadow-md space-y-4 relative text-sm">
                 <button
-                    className="absolute top-2 right-3 text-gray-400 hover:text-red-500 text-sm font-bold cursor-pointer"
                     onClick={() => setAddModal(false)}
+                    className="absolute top-2 right-2 text-black/50 hover:text-white hover:bg-black/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
                 >
-                    ✕
+                    <X className="w-5 h-5" />
                 </button>
 
                 <h2 className="text-base font-semibold text-gray-800 text-center">Add Client</h2>

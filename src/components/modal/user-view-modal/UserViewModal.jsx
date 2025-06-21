@@ -1,5 +1,6 @@
 "use client"
 
+import { X } from "lucide-react"
 import Image from "next/image"
 import { GrSchedule } from "react-icons/gr"
 import { MdOutlineMailOutline } from "react-icons/md"
@@ -29,9 +30,9 @@ const UserViewModal = ({ setViewModal, viewModal, data }) => {
                     {/* Close Button */}
                     <button
                         onClick={() => setViewModal(false)}
-                        className="absolute top-2 right-4 text-gray-200 hover:text-red-500 text-lg font-bold cursor-pointer"
+                        className="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
                     >
-                        ✕
+                        <X className="w-5 h-5" />
                     </button>
 
                     {/* User Profile */}
@@ -122,16 +123,6 @@ const UserViewModal = ({ setViewModal, viewModal, data }) => {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {/* Fixed Action Button */}
-                <div className="flex-shrink-0 p-3 border-t border-gray-200 bg-white">
-                    <button
-                        onClick={() => setViewModal(false)}
-                        className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-4 py-2 rounded-sm text-xs font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                    >
-                        Close Profile
-                    </button>
                 </div>
             </div>
         </div>
