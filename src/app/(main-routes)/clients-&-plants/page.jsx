@@ -47,12 +47,15 @@ const clientsAndPlants = () => {
       <div className="flex justify-between mb-2">
         <h1 className="font-medium">Client & Plants</h1>
         <div className="flex items-center gap-5">
-          <button onClick={()=>setAddModal(true)} className="bg-primary hover:bg-primary/80 text-xs font-medium text-white px-2 py-1 rounded-sm cursor-pointer transition-all duration-500">
+          <button onClick={() => setAddModal(true)} className="bg-primary hover:bg-primary/80 text-xs font-medium text-white px-2 py-1 rounded-sm cursor-pointer transition-all duration-500">
             + Add Client
           </button>
 
           <div className="relative">
-            <FiSearch className="absolute text-gray-400 -translate-y-1/2 left-2 top-1/2" size={14} />
+            <FiSearch
+              className="absolute text-gray-400 -translate-y-1/2 left-2 top-1/2"
+              size={14}
+            />
             <input
               placeholder="Search here..."
               value={query}
@@ -60,7 +63,7 @@ const clientsAndPlants = () => {
                 setPage(1);
                 setQuery(e.target.value);
               }}
-              className="w-full pl-8 pr-4 py-1 text-sm placeholder:text-xs rounded-sm border border-primary focus:outline-none"
+              className="w-full pl-8 pr-4 py-1 text-sm placeholder:text-xs rounded-sm border border-gray-300 focus:ring-1 focus:ring-primary transition-all duration-300 focus:outline-none"
             />
           </div>
         </div>
@@ -78,7 +81,7 @@ const clientsAndPlants = () => {
       <ClientsAndPlantsModal setViewModal={setViewModal} viewModal={viewModal} data={selectedCompany} />
 
       {/* Add Client Modal */}
-      <AddClientModal {...{addModal, setAddModal}}/>
+      <AddClientModal {...{ addModal, setAddModal }} />
 
       {/* Confirm Modal */}
       <ConfirmModal

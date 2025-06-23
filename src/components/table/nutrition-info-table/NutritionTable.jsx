@@ -1,5 +1,6 @@
 "use client";
-import { MdModeEditOutline, MdDelete } from "react-icons/md"; 
+import { MdModeEditOutline } from "react-icons/md"; 
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const NutritionTable = ({ paged, handleDelete, handleEdit }) => { 
   return (
@@ -38,7 +39,7 @@ const NutritionTable = ({ paged, handleDelete, handleEdit }) => {
                     className="text-red-400 hover:text-red-600 cursor-pointer p-1 rounded-sm bg-red-100 transition-all duration-200"
                     title="Delete Nutrition"
                   >
-                    <MdDelete size={18} />
+                    <RiDeleteBin6Line size={18} />
                   </button>
                 </div>
               </td>
