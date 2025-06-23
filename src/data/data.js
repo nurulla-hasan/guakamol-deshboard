@@ -55,11 +55,23 @@ export const notifications = [
 ];
 
 export const user = {
-  name: "Robert Smith",
-  email: "robertsmith@gmail.com",
-  contact: "+99007007007",
-  address: "79/A Joker Villa, Gotham City",
-};
+  "_id": "admin001",
+  "userName": "Admin User",
+  "email": "admin@example.com",
+  "role": "SuperAdmin",
+  "status": "Active",
+  "lastLogin": "2025-06-23T22:04:28Z",
+  "profileImage": "/images/avatar.jpg",
+  "contactInfo": {
+    "phone": "+8801812345678",
+    "address": {
+      "street": "Admin Tower, Road 7",
+      "city": "Dhaka",
+      "postCode": "1212",
+      "country": "Bangladesh"
+    }
+  }
+}
 
 export const recentMatches = [
   {
@@ -351,7 +363,7 @@ export const companies = [
 // User Data
 export const userData = [
   {
-    _id: "f82b9f72-1ab8-473f-ba73-87d96966510b", 
+    _id: "f82b9f72-1ab8-473f-ba73-87d96966510b",
     companyName: "Innovate Solutions Corp.",
     userEmail: "alice.johnson@innovatesol.com",
     userName: "Alice Johnson",
@@ -382,7 +394,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -421,7 +433,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -460,7 +472,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -499,7 +511,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -538,7 +550,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -577,7 +589,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -616,7 +628,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -655,7 +667,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -694,7 +706,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -733,7 +745,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -772,7 +784,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -811,7 +823,7 @@ export const userData = [
       {
         day: "Friday",
         meal: "Pizza Night",
-      }, 
+      },
       {
         day: "Saturday",
         meal: "Roasted Vegetable Medley",
@@ -1291,7 +1303,7 @@ export const reportsData = [
     plant: "Plant A",
     mealType: "Lunch",
     employeeCount: 45,
-    totalMeal: 45, 
+    totalMeal: 45,
     prize: 24,
     details: {
       dishes: [

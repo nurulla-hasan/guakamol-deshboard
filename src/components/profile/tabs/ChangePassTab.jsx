@@ -1,72 +1,130 @@
-import React from 'react';
-import { PiEyeLight, PiEyeSlash } from 'react-icons/pi';
+"use client"
+import { PiEyeLight, PiEyeSlash } from "react-icons/pi"
+import { Lock, Shield, Key } from "lucide-react"
+import InputField from "@/components/helper/input-helper/InputField"
 
-const ChangePassTab = ({activeTab, handleSubmit, onSubmitPassword, register, setShowCurrentPassword, showCurrentPassword, setShowNewPassword, setShowConfirmPassword, showNewPassword,  showConfirmPassword}) => {
-    return (
-        <>
-            {activeTab === 'password' && (
-                <form onSubmit={handleSubmit(onSubmitPassword)} className="space-y-4">
-                    <h3 className='text-2xl font-medium text-center'>
-                        Change Password
-                    </h3>
+const ChangePassTab = ({
+  onSubmit,
+  register,
+  errors,
+  setShowCurrentPassword,
+  showCurrentPassword,
+  setShowNewPassword,
+  showNewPassword,
+  setShowConfirmPassword,
+  showConfirmPassword,
+  watch,
+}) => {
+  return (
+    <div className="bg-white rounded-sm border border-gray-200 shadow-sm overflow-hidden">
+      {/* Form Content */}
+      <form onSubmit={onSubmit} className="p-6 space-y-6">
+        {/* Current Password */}
+        <div className="space-y-2">
+          <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+            <Lock className="h-4 w-4 text-primary" />
+            Current Password
+          </label>
+          <div className="relative">
+            <InputField
+              name="currentPassword"
+              type={showCurrentPassword ? "text" : "password"}
+              placeholder="Enter your current password"
+              register={register}
+              errors={errors}
+              validation={{ required: "Current Password is required" }}
+            />
+            <div
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hover:bg-gray-100 p-1 rounded-full transition-colors"
+              onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+            >
+              {showCurrentPassword ? (
+                <PiEyeLight className="text-primary" size={18} />
+              ) : (
+                <PiEyeSlash className="text-primary" size={18} />
+              )}
+            </div>
+          </div>
+        </div>
 
-                    <div className="relative">
-                        <label className="block mb-1 font-medium">Current Password</label>
-                        <input
-                            type={showCurrentPassword ? 'text' : 'password'}
-                            {...register('currentPassword')}
-                            placeholder='********'
-                            className="w-full border border-[#5CA97E] rounded-md p-2 outline-none"
-                        />
-                        <div
-                            className="absolute right-3 top-9 cursor-pointer"
-                            onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                        >
-                            {showCurrentPassword ? <PiEyeLight color='#5CA97E' size={25} /> : <PiEyeSlash color='#5CA97E' size={25} />}
-                        </div>
-                    </div>
+        {/* New Password */}
+        <div className="space-y-2">
+          <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+            <Key className="h-4 w-4 text-primary" />
+            New Password
+          </label>
+          <div className="relative">
+            <InputField
+              name="newPassword"
+              type={showNewPassword ? "text" : "password"}
+              placeholder="Enter your new password"
+              register={register}
+              errors={errors}
+              validation={{
+                required: "New Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password must be at least 6 characters",
+                },
+              }}
+            />
+            <div
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hover:bg-gray-100 p-1 rounded-full transition-colors"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+            >
+              {showNewPassword ? (
+                <PiEyeLight className="text-primary" size={18} />
+              ) : (
+                <PiEyeSlash className="text-primary" size={18} />
+              )}
+            </div>
+          </div>
+        </div>
 
-                    <div className="relative">
-                        <label className="block mb-1 font-medium">New Password</label>
-                        <input
-                            type={showNewPassword ? 'text' : 'password'}
-                            {...register('newPassword')}
-                            placeholder='********'
-                            className="w-full border border-[#5CA97E] rounded-md p-2 outline-none"
-                        />
-                        <div
-                            className="absolute right-3 top-9 cursor-pointer"
-                            onClick={() => setShowNewPassword(!showNewPassword)}
-                        >
-                            {showNewPassword ? <PiEyeLight color='#5CA97E' size={25} /> : <PiEyeSlash color='#5CA97E' size={25} />}
-                        </div>
-                    </div>
+        {/* Confirm New Password */}
+        <div className="space-y-2">
+          <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+            <Shield className="h-4 w-4 text-primary" />
+            Confirm New Password
+          </label>
+          <div className="relative">
+            <InputField
+              name="confirmPassword"
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm your new password"
+              register={register}
+              errors={errors}
+              validation={{
+                required: "Confirm New Password is required",
+                validate: (value) => value === watch("newPassword") || "Passwords do not match",
+              }}
+            />
+            <div
+              className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hover:bg-gray-100 p-1 rounded-full transition-colors"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? (
+                <PiEyeLight className="text-primary" size={18} />
+              ) : (
+                <PiEyeSlash className="text-primary" size={18} />
+              )}
+            </div>
+          </div>
+        </div>
 
-                    <div className="relative">
-                        <label className="block mb-1 font-medium">Confirm New Password</label>
-                        <input
-                            type={showConfirmPassword ? 'text' : 'password'}
-                            {...register('confirmPassword')}
-                            placeholder='********'
-                            className="w-full border border-[#5CA97E] rounded-md p-2 outline-none"
-                        />
-                        <div
-                            className="absolute right-3 top-9 cursor-pointer"
-                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        >
-                            {showConfirmPassword ? <PiEyeLight color='#5CA97E' size={25} /> : <PiEyeSlash color='#5CA97E' size={25} />}
-                        </div>
-                    </div>
+        {/* Submit Button */}
+        <div className="pt-4 border-t border-gray-200">
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white py-2 px-6 rounded-sm text-xs font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <Shield className="w-3 h-3" />
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  )
+}
 
-                    <div className='w-full text-center'>
-                        <button type="submit" className="mt-4 px-8 bg-[#5CA97E] hover:bg-[#5CA97E] text-white py-2 rounded-md cursor-pointer">
-                            Save Changes
-                        </button>
-                    </div>
-                </form>
-            )}
-        </>
-    );
-};
-
-export default ChangePassTab;
+export default ChangePassTab
