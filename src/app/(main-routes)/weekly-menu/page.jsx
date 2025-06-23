@@ -1,8 +1,7 @@
 "use client";
-import { MapPin, ChevronDown, Edit, Calendar } from "lucide-react"; // Calendar আইকন আর লাগবে না
+import { Calendar } from "lucide-react";
 import PageContainer from "@/components/container/PageContainer";
 import ConfirmModal from "@/components/modal/confirm-modal/ConfirmModal";
-import UserViewModal from "@/components/modal/user-view-modal/UserViewModal";
 import Pagination from "@/components/pagination/Pagination";
 import WeeklyMenuTable from "@/components/table/weekly-menu-table/WeeklyMenuTable";
 import { weeklyMenu } from "@/data/data";
@@ -12,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { IoIosArrowDown } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { subMonths, addMonths, format } from 'date-fns';
+import { format } from 'date-fns';
 import { IoAdd } from "react-icons/io5";
 import MenuViewModal from "@/components/modal/menu-view-modal/MenuViewModal";
 import AddMenuModal from "@/components/modal/add-menu-modal/AddMenuModal";
@@ -23,7 +22,7 @@ const WeeklyMenuPage = () => {
   const [viewModal, setViewModal] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [addMenuModal, setMenuAddModal] = useState(false);
+  const [addMenuModal, setAddMenuModal] = useState(false);
 
   const [startDate, setStartDate] = useState(new Date());
 
@@ -58,7 +57,7 @@ const WeeklyMenuPage = () => {
 
   const handleAddMenu = () => {
     console.log("add button clicked");
-    setMenuAddModal(true);
+    setAddMenuModal(true);
   };
 
   const pageCount = Math.ceil(weeklyMenu.length / pageSize);
@@ -103,7 +102,7 @@ const WeeklyMenuPage = () => {
           <div>
             <button onClick={handleAddMenu} className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
               <IoAdd className="h-4 w-4" />
-              Add
+              Add Menu
             </button>
           </div>
         </div>
@@ -130,7 +129,7 @@ const WeeklyMenuPage = () => {
 
       {/* Add Menu Modal */}
       <AddMenuModal
-        setMenuAddModal={setMenuAddModal}
+        setAddMenuModal={setAddMenuModal}
         addMenuModal={addMenuModal}
       />
 

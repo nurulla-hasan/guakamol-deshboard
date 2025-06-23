@@ -27,11 +27,11 @@ const ClientsAndPlantsModal = ({ setViewModal, viewModal, data }) => {
       <div className="bg-white rounded-lg w-full max-w-lg space-y-7 relative">
         {/* Close Button */}
         <button
-            onClick={() => setViewModal(false)}
-            className="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          onClick={() => setViewModal(false)}
+          className="absolute top-2 right-2 text-white/80 hover:text-white hover:bg-white/20 p-1 rounded-full transition-all duration-200 cursor-pointer"
+        >
+          <X className="w-5 h-5" />
+        </button>
 
         {/* Company Image + Name */}
         <div className="flex flex-col items-center gap-3 text-center bg-primary/90 p-8 rounded-lg">
@@ -51,8 +51,8 @@ const ClientsAndPlantsModal = ({ setViewModal, viewModal, data }) => {
         {/* Company Stats */}
         <div className="w-full space-y-4 mt-2 p-8">
           <StatRow icon={<FaRegAddressCard />} label="Address" value={data?.companyAddress} />
-          <StatRow icon={<RiPlantLine size={16}/>} label="Plants" value={data?.plants} />
-          <StatRow icon={<LuUserCheck size={16}/>} label="Active Employees" value={data?.activeEmployees} />
+          <StatRow icon={<RiPlantLine size={16} />} label="Plants" value={data?.plants} />
+          <StatRow icon={<LuUserCheck size={16} />} label="Active Employees" value={data?.activeEmployees} />
           <StatRow icon={<GrStatusInfo />} label="Status" value={data?.status} />
         </div>
       </div>

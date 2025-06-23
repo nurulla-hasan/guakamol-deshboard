@@ -23,7 +23,7 @@ const Sidebar = ({ menuItems, setSettingsOpen, settingsOpen, pathname, settingMe
                 {/* Logo */}
                 <Link href="/">
                     <div className="flex items-center justify-center min-h-[70px]">
-                        <Image className="h-10 w-40" src="/images/logo.png" width={500} height={500} alt="Logo" />
+                        <Image className="h-10 w-40" src="/images/logo.png" width={500} height={500} alt="Logo" priority />
                     </div>
                 </Link>
 
