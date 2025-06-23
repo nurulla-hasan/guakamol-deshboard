@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className='container mx-auto max-w-fulla'>
+      <body className='container mx-auto max-w-full'>
         <Provider store={store}>
           {/* <PrivateRoute> */}
             <NextTopLoader
