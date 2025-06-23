@@ -63,7 +63,7 @@ export default function Pagination({ page, setPage, pageCount, pageSize, filtere
                             <span>...</span>
                             <button
                                 onClick={() => setPage(pageCount)}
-                                className="w-7 h-7 rounded-full text-center text-sm cursor-pointer"
+                                className="w-7 h-7 rounded-full text-center text-xs cursor-pointer"
                             >
                                 {pageCount}
                             </button>
@@ -79,7 +79,6 @@ export default function Pagination({ page, setPage, pageCount, pageSize, filtere
                     </button>
                 </div>
             </div>
-
         </div>
 
     );

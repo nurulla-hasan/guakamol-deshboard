@@ -1655,3 +1655,293 @@ export const weeklyMenu = [
     }
   }
 ];
+
+// Nutriton data
+export const nutritionData = [
+  {
+    "_id": "dish001",
+    "dishName": "Grilled Salmon with Asparagus",
+    "description": "Perfectly grilled salmon fillet served with steamed asparagus and a lemon-dill sauce.",
+    "imageUrl": "https://example.com/images/grilled_salmon_asparagus.jpg",
+    "mealType": "Dinner",
+    "assignedToUser": "user123",
+    "assignedToCompany": "companyABC",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing001", "name": "Salmon Fillet", "quantity": 180, "unit": "grms" },
+      { "ingredientId": "ing002", "name": "Asparagus", "quantity": 100, "unit": "grms" },
+      { "ingredientId": "ing003", "name": "Lemon", "quantity": 0.5, "unit": "unit" },
+      { "ingredientId": "ing004", "name": "Olive Oil", "quantity": 10, "unit": "ml" },
+      { "ingredientId": "ing005", "name": "Dill (fresh)", "quantity": 3, "unit": "grms" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut001", "name": "Calories", "value": 380, "unit": "kcal" },
+      { "nutrientId": "nut002", "name": "Protein", "value": 28, "unit": "g" },
+      { "nutrientId": "nut003", "name": "Fat", "value": 26, "unit": "g" },
+      { "nutrientId": "nut004", "name": "Carbohydrates", "value": 8, "unit": "g" },
+      { "nutrientId": "nut005", "name": "Fiber", "value": 3, "unit": "g" }
+    ],
+    "allergens": [{ "allergenId": "all001", "name": "Fish", "details": "Contains salmon" }]
+  },
+  {
+    "_id": "dish002",
+    "dishName": "Spicy Chicken Stir-fry",
+    "description": "Tender chicken strips stir-fried with colorful bell peppers, broccoli, and a spicy sauce.",
+    "imageUrl": "https://example.com/images/chicken_stir_fry.jpg",
+    "mealType": "Lunch",
+    "assignedToUser": "user456",
+    "assignedToCompany": "companyXYZ",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing006", "name": "Chicken Breast", "quantity": 150, "unit": "grms" },
+      { "ingredientId": "ing007", "name": "Bell Peppers", "quantity": 80, "unit": "grms" },
+      { "ingredientId": "ing008", "name": "Broccoli", "quantity": 70, "unit": "grms" },
+      { "ingredientId": "ing009", "name": "Soy Sauce", "quantity": 15, "unit": "ml" },
+      { "ingredientId": "ing010", "name": "Chili Garlic Sauce", "quantity": 5, "unit": "ml" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut006", "name": "Calories", "value": 320, "unit": "kcal" },
+      { "nutrientId": "nut007", "name": "Protein", "value": 25, "unit": "g" },
+      { "nutrientId": "nut008", "name": "Fat", "value": 15, "unit": "g" },
+      { "nutrientId": "nut009", "name": "Carbohydrates", "value": 20, "unit": "g" },
+      { "nutrientId": "nut010", "name": "Sodium", "value": 600, "unit": "mg" }
+    ],
+    "allergens": [{ "allergenId": "all002", "name": "Soy", "details": "Contains soy sauce" }]
+  },
+  {
+    "_id": "dish003",
+    "dishName": "Vegetable Lentil Soup",
+    "description": "Hearty and nutritious soup made with lentils, carrots, celery, and spinach.",
+    "imageUrl": "https://example.com/images/lentil_soup.jpg",
+    "mealType": "Lunch",
+    "assignedToUser": "user123",
+    "assignedToCompany": "companyABC",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing011", "name": "Red Lentils", "quantity": 100, "unit": "grms" },
+      { "ingredientId": "ing012", "name": "Carrots", "quantity": 50, "unit": "grms" },
+      { "ingredientId": "ing013", "name": "Celery", "quantity": 40, "unit": "grms" },
+      { "ingredientId": "ing014", "name": "Spinach", "quantity": 30, "unit": "grms" },
+      { "ingredientId": "ing015", "name": "Vegetable Broth", "quantity": 250, "unit": "ml" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut011", "name": "Calories", "value": 250, "unit": "kcal" },
+      { "nutrientId": "nut012", "name": "Protein", "value": 15, "unit": "g" },
+      { "nutrientId": "nut013", "name": "Fat", "value": 5, "unit": "g" },
+      { "nutrientId": "nut014", "name": "Carbohydrates", "value": 35, "unit": "g" },
+      { "nutrientId": "nut015", "name": "Fiber", "value": 10, "unit": "g" }
+    ],
+    "allergens": []
+  },
+  {
+    "_id": "dish004",
+    "dishName": "Quinoa Salad with Chickpeas",
+    "description": "A refreshing salad with fluffy quinoa, chickpeas, cucumber, tomatoes, and a lemon vinaigrette.",
+    "imageUrl": "https://example.com/images/quinoa_salad.jpg",
+    "mealType": "Lunch",
+    "assignedToUser": "user789",
+    "assignedToCompany": "companyDEF",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing016", "name": "Quinoa (cooked)", "quantity": 120, "unit": "grms" },
+      { "ingredientId": "ing017", "name": "Chickpeas (canned)", "quantity": 80, "unit": "grms" },
+      { "ingredientId": "ing018", "name": "Cucumber", "quantity": 50, "unit": "grms" },
+      { "ingredientId": "ing019", "name": "Cherry Tomatoes", "quantity": 40, "unit": "grms" },
+      { "ingredientId": "ing020", "name": "Lemon Juice", "quantity": 10, "unit": "ml" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut016", "name": "Calories", "value": 280, "unit": "kcal" },
+      { "nutrientId": "nut017", "name": "Protein", "value": 12, "unit": "g" },
+      { "nutrientId": "nut018", "name": "Fat", "value": 8, "unit": "g" },
+      { "nutrientId": "nut019", "name": "Carbohydrates", "value": 40, "unit": "g" },
+      { "nutrientId": "nut020", "name": "Fiber", "value": 7, "unit": "g" }
+    ],
+    "allergens": []
+  },
+  {
+    "_id": "dish005",
+    "dishName": "Beef and Broccoli",
+    "description": "Savory beef strips with tender broccoli florets in a rich, garlicky sauce.",
+    "imageUrl": "https://example.com/images/beef_broccoli.jpg",
+    "mealType": "Dinner",
+    "assignedToUser": "user123",
+    "assignedToCompany": "companyXYZ",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing021", "name": "Beef Sirloin", "quantity": 180, "unit": "grms" },
+      { "ingredientId": "ing022", "name": "Broccoli", "quantity": 150, "unit": "grms" },
+      { "ingredientId": "ing023", "name": "Soy Sauce", "quantity": 20, "unit": "ml" },
+      { "ingredientId": "ing024", "name": "Garlic (minced)", "quantity": 5, "unit": "grms" },
+      { "ingredientId": "ing025", "name": "Ginger (grated)", "quantity": 3, "unit": "grms" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut021", "name": "Calories", "value": 450, "unit": "kcal" },
+      { "nutrientId": "nut022", "name": "Protein", "value": 35, "unit": "g" },
+      { "nutrientId": "nut023", "name": "Fat", "value": 28, "unit": "g" },
+      { "nutrientId": "nut024", "name": "Carbohydrates", "value": 15, "unit": "g" },
+      { "nutrientId": "nut025", "name": "Iron", "value": 5, "unit": "mg" }
+    ],
+    "allergens": [{ "allergenId": "all003", "name": "Soy", "details": "Contains soy sauce" }]
+  },
+  {
+    "_id": "dish006",
+    "dishName": "Spinach & Feta Omelette",
+    "description": "Fluffy omelette filled with fresh spinach and crumbled feta cheese, perfect for breakfast.",
+    "imageUrl": "https://example.com/images/spinach_feta_omelette.jpg",
+    "mealType": "Breakfast",
+    "assignedToUser": "user456",
+    "assignedToCompany": "companyDEF",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing026", "name": "Eggs", "quantity": 2, "unit": "unit" },
+      { "ingredientId": "ing027", "name": "Fresh Spinach", "quantity": 50, "unit": "grms" },
+      { "ingredientId": "ing028", "name": "Feta Cheese", "quantity": 30, "unit": "grms" },
+      { "ingredientId": "ing029", "name": "Milk", "quantity": 15, "unit": "ml" },
+      { "ingredientId": "ing030", "name": "Salt & Pepper", "quantity": 1, "unit": "grms" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut026", "name": "Calories", "value": 200, "unit": "kcal" },
+      { "nutrientId": "nut027", "name": "Protein", "value": 14, "unit": "g" },
+      { "nutrientId": "nut028", "name": "Fat", "value": 15, "unit": "g" },
+      { "nutrientId": "nut029", "name": "Carbohydrates", "value": 5, "unit": "g" },
+      { "nutrientId": "nut030", "name": "Calcium", "value": 150, "unit": "mg" }
+    ],
+    "allergens": [
+      { "allergenId": "all004", "name": "Eggs", "details": "Contains eggs" },
+      { "allergenId": "all005", "name": "Dairy", "details": "Contains milk and feta cheese" }
+    ]
+  },
+  {
+    "_id": "dish007",
+    "dishName": "Chickpea & Vegetable Wrap",
+    "description": "Whole wheat wrap filled with mashed chickpeas, assorted fresh vegetables, and a light dressing.",
+    "imageUrl": "https://example.com/images/chickpea_wrap.jpg",
+    "mealType": "Lunch",
+    "assignedToUser": "user123",
+    "assignedToCompany": "companyABC",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing031", "name": "Whole Wheat Tortilla", "quantity": 1, "unit": "unit" },
+      { "ingredientId": "ing032", "name": "Chickpeas (mashed)", "quantity": 100, "unit": "grms" },
+      { "ingredientId": "ing033", "name": "Mixed Greens", "quantity": 30, "unit": "grms" },
+      { "ingredientId": "ing034", "name": "Tomato", "quantity": 20, "unit": "grms" },
+      { "ingredientId": "ing035", "name": "Cucumber", "quantity": 20, "unit": "grms" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut031", "name": "Calories", "value": 290, "unit": "kcal" },
+      { "nutrientId": "nut032", "name": "Protein", "value": 10, "unit": "g" },
+      { "nutrientId": "nut033", "name": "Fat", "value": 8, "unit": "g" },
+      { "nutrientId": "nut034", "name": "Carbohydrates", "value": 45, "unit": "g" },
+      { "nutrientId": "nut035", "name": "Fiber", "value": 8, "unit": "g" }
+    ],
+    "allergens": [{ "allergenId": "all006", "name": "Gluten", "details": "Contains whole wheat tortilla" }]
+  },
+  {
+    "_id": "dish008",
+    "dishName": "Chicken Caesar Salad",
+    "description": "Crisp romaine lettuce, grilled chicken breast, croutons, parmesan cheese, and creamy Caesar dressing.",
+    "imageUrl": "https://example.com/images/chicken_caesar_salad.jpg",
+    "mealType": "Lunch",
+    "assignedToUser": "user789",
+    "assignedToCompany": "companyXYZ",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing036", "name": "Romaine Lettuce", "quantity": 100, "unit": "grms" },
+      { "ingredientId": "ing037", "name": "Grilled Chicken", "quantity": 120, "unit": "grms" },
+      { "ingredientId": "ing038", "name": "Croutons", "quantity": 20, "unit": "grms" },
+      { "ingredientId": "ing039", "name": "Parmesan Cheese", "quantity": 15, "unit": "grms" },
+      { "ingredientId": "ing040", "name": "Caesar Dressing", "quantity": 30, "unit": "ml" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut036", "name": "Calories", "value": 370, "unit": "kcal" },
+      { "nutrientId": "nut037", "name": "Protein", "value": 28, "unit": "g" },
+      { "nutrientId": "nut038", "name": "Fat", "value": 25, "unit": "g" },
+      { "nutrientId": "nut039", "name": "Carbohydrates", "value": 15, "unit": "g" },
+      { "nutrientId": "nut040", "name": "Sodium", "value": 700, "unit": "mg" }
+    ],
+    "allergens": [
+      { "allergenId": "all007", "name": "Dairy", "details": "Contains Parmesan cheese" },
+      { "allergenId": "all008", "name": "Gluten", "details": "Contains croutons" }
+    ]
+  },
+  {
+    "_id": "dish009",
+    "dishName": "Miso Soup with Tofu",
+    "description": "Traditional Japanese soup with savory miso paste, soft tofu, and seaweed.",
+    "imageUrl": "https://example.com/images/miso_soup.jpg",
+    "mealType": "Dinner",
+    "assignedToUser": "user123",
+    "assignedToCompany": "companyDEF",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing041", "name": "Miso Paste", "quantity": 20, "unit": "grms" },
+      { "ingredientId": "ing042", "name": "Soft Tofu", "quantity": 80, "unit": "grms" },
+      { "ingredientId": "ing043", "name": "Dried Wakame Seaweed", "quantity": 5, "unit": "grms" },
+      { "ingredientId": "ing044", "name": "Green Onions", "quantity": 10, "unit": "grms" },
+      { "ingredientId": "ing045", "name": "Water", "quantity": 300, "unit": "ml" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut041", "name": "Calories", "value": 120, "unit": "kcal" },
+      { "nutrientId": "nut042", "name": "Protein", "value": 8, "unit": "g" },
+      { "nutrientId": "nut043", "name": "Fat", "value": 5, "unit": "g" },
+      { "nutrientId": "nut044", "name": "Carbohydrates", "value": 10, "unit": "g" },
+      { "nutrientId": "nut045", "name": "Sodium", "value": 800, "unit": "mg" }
+    ],
+    "allergens": [{ "allergenId": "all009", "name": "Soy", "details": "Contains miso paste (fermented soy)" }]
+  },
+  {
+    "_id": "dish010",
+    "dishName": "Fruit Salad with Yogurt",
+    "description": "A refreshing mix of seasonal fruits topped with creamy Greek yogurt and a drizzle of honey.",
+    "imageUrl": "https://example.com/images/fruit_salad_yogurt.jpg",
+    "mealType": "Snacks",
+    "assignedToUser": "user456",
+    "assignedToCompany": "companyABC",
+    "weekRange": {
+      "startDate": "2025-06-24T00:00:00.000Z",
+      "endDate": "2025-06-30T00:00:00.000Z"
+    },
+    "ingredients": [
+      { "ingredientId": "ing046", "name": "Mixed Berries", "quantity": 80, "unit": "grms" },
+      { "ingredientId": "ing047", "name": "Banana", "quantity": 50, "unit": "grms" },
+      { "ingredientId": "ing048", "name": "Apple", "quantity": 40, "unit": "grms" },
+      { "ingredientId": "ing049", "name": "Greek Yogurt", "quantity": 100, "unit": "grms" },
+      { "ingredientId": "ing050", "name": "Honey", "quantity": 5, "unit": "ml" }
+    ],
+    "nutritionInfo": [
+      { "nutrientId": "nut046", "name": "Calories", "value": 180, "unit": "kcal" },
+      { "nutrientId": "nut047", "name": "Protein", "value": 8, "unit": "g" },
+      { "nutrientId": "nut048", "name": "Fat", "value": 3, "unit": "g" },
+      { "nutrientId": "nut049", "name": "Carbohydrates", "value": 30, "unit": "g" },
+      { "nutrientId": "nut050", "name": "Vitamin C", "value": 40, "unit": "mg" }
+    ],
+    "allergens": [{ "allergenId": "all010", "name": "Dairy", "details": "Contains Greek Yogurt" }]
+  }
+]

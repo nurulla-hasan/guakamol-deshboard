@@ -51,7 +51,7 @@ const clientsAndPlants = () => {
               setPage(1);
               setQuery(e.target.value);
             }}
-            className="w-full pl-8 pr-4 py-1 text-sm placeholder:text-xs rounded-sm border border-primary focus:outline-none"
+            className="w-full pl-8 pr-4 py-1 text-sm placeholder:text-xs rounded-sm border border-gray-300 focus:ring-1 focus:ring-primary transition-all duration-300 focus:outline-none"
           />
         </div>
       </div>

@@ -7,24 +7,24 @@ const WeeklyMenuTable = ({ paged, handleBlock, handleView }) => {
     return (
         <table className="min-w-full text-sm">
             <thead className="bg-primary text-white sticky top-0">
-                <tr className="*:font-normal *:px-4 *:py-2 *:text-center">
+                <tr className="*:font-normal *:px-4 *:py-2 *:text-start">
                     <th>SL</th>
                     <th>Dish Image</th>
                     <th>Name</th>
                     <th>Meal Type</th>
                     <th>Company</th>
-                    <th>Action</th>
+                    <th className="text-center!">Action</th>
                 </tr>
             </thead>
             <tbody>
                 {paged.map((menu, idx) => (
                     <tr
                         key={menu._id}
-                        className="hover:bg-gray-100 text-xs transition-all duration-200 *:border-b *:border-gray-200 *:px-4 *:py-4 *:text-center"
+                        className="hover:bg-green-100 text-xs transition-all duration-200 *:border-b *:border-gray-200 *:px-4 *:py-4 *:text-start"
                     >
                         <td>{idx + 1}</td>
                         <td>
-                            <div className="flex justify-center">
+                            <div className="flex justify-start">
                                 <Image
                                     src={menu?.menuImage}
                                     alt="menuImage"
