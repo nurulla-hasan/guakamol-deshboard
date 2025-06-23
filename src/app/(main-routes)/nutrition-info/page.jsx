@@ -8,10 +8,11 @@ import Pagination from "@/components/pagination/Pagination";
 import { nutritionData } from "@/data/data";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import EditNutritionModal from "@/components/modal/nutrition-modal/EditNutritionModal";
 import { IoIosArrowDown } from "react-icons/io";
 import IngredientsTable from "@/components/table/nutrition-info-table/IngredientsTable";
 import { Leaf } from "lucide-react";
+import EditNutritionModal from "@/components/modal/nutrition-modal/EditNutritionModal";
+import EditIngredientModal from "@/components/modal/nutrition-modal/EditIngredientModal";
 
 
 const NutritionPage = () => {
@@ -179,14 +180,7 @@ const NutritionPage = () => {
         confirmModal={confirmModal}
         message="Are you sure you want to delete this item?"
       />
-
-      {/* Edit Nutrition/Ingredient Modal */}
-      <EditNutritionModal
-        editModal={editModal}
-        setEditModal={setEditModal}
-        selectedNutritionItem={selectedItem}
-      />
-      {/* {activeTab === "nutrition" ? (
+      {activeTab === "nutrition" ? (
         <EditNutritionModal
           editModal={editModal}
           setEditModal={setEditModal}
@@ -198,7 +192,7 @@ const NutritionPage = () => {
           setEditModal={setEditModal}
           selectedIngredientItem={selectedItem}
         />
-      )} */}
+      )}
     </PageContainer>
   );
 };

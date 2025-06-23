@@ -8,7 +8,7 @@ const NutritionTable = ({ paged, handleDelete, handleEdit }) => {
         <thead className="bg-primary text-white sticky top-0">
           <tr className="*:font-normal *:px-4 *:py-2 *:text-start">
             <th>SL</th>
-            <th>Nutrient</th>
+            <th>Nutrient Name</th>
             <th>Value</th>
             <th>Unit</th>
             <th className="text-center!">Action</th>
