@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import ReportsTable from "@/components/table/reports-table/ReportsTable";
 import ReportViewModal from "@/components/modal/report-view-modal/ReportViewModal";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"; 
+import "react-datepicker/dist/react-datepicker.css";
 import { reportsData } from "@/data/data";
 
 const ReportsPage = () => {
@@ -33,12 +33,18 @@ const ReportsPage = () => {
 
   const mealTypeOptions = useMemo(() => {
     const types = [...new Set(reportsData.map((report) => report.mealType))];
-    return [{ value: "All", label: "All Meal Types" }, ...types.map((type) => ({ value: type, label: type }))];
+    return [
+      { value: "All", label: "All Meal Types" },
+      ...types.map((type) => ({ value: type, label: type })),
+    ];
   }, []);
 
   const plantTypeOptions = useMemo(() => {
     const plants = [...new Set(reportsData.map((report) => report.plant))];
-    return [{ value: "All Plants", label: "All Plant Types" }, ...plants.map((plant) => ({ value: plant, label: plant }))];
+    return [
+      { value: "All Plants", label: "All Plant Types" },
+      ...plants.map((plant) => ({ value: plant, label: plant })),
+    ];
   }, []);
 
   const handleView = (report) => {
@@ -75,10 +81,7 @@ const ReportsPage = () => {
       : true;
 
     return (
-      matchesSearchQuery &&
-      matchesDate &&
-      matchesMealType &&
-      matchesPlantType
+      matchesSearchQuery && matchesDate && matchesMealType && matchesPlantType
     );
   });
 
@@ -90,12 +93,12 @@ const ReportsPage = () => {
 
   useEffect(() => {
     setPage(1);
-  }, [query, startDate, selectedMealType, selectedPlantType]); 
+  }, [query, startDate, selectedMealType, selectedPlantType]);
 
   return (
     <PageContainer>
       {/* header + filters */}
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
         <h1 className="font-medium text-lg mb-2 md:mb-0">Reports</h1>
         <div className="flex flex-wrap items-center gap-2">
           {/* Date Picker (Calendar) */}
@@ -106,8 +109,12 @@ const ReportsPage = () => {
               placeholderText="Select Date"
               className="w-full pl-3 pr-8 py-1 text-sm placeholder:text-xs rounded-sm border border-gray-300 focus:ring-1 focus:ring-primary transition-all duration-300 focus:outline-none"
               dateFormat="d MMM yyyy"
+              popperContainer={({ children }) => (
+                <div style={{ zIndex: 9999 }}>{children}</div>
+              )}
+              popperPlacement="bottom-start"
             />
-            <div className="absolute top-1/2 -translate-y-1/2 right-2 transform text-gray-400 pointer-events-none"> 
+            <div className="absolute top-1/2 -translate-y-1/2 right-2 transform text-gray-400 pointer-events-none">
               <IoIosArrowDown size={12} />
             </div>
           </div>
@@ -118,7 +125,7 @@ const ReportsPage = () => {
               register={register}
               name="selectMealType"
               options={mealTypeOptions}
-              defaultOption="Select Meal Types" 
+              defaultOption="Select Meal Types"
             />
             <div className="absolute top-1/2 -translate-y-1/2 right-2 transform text-gray-400 pointer-events-none">
               <IoIosArrowDown size={12} />
@@ -141,7 +148,7 @@ const ReportsPage = () => {
       </div>
 
       {/* table */}
-      <div className="overflow-auto h-[75vh] scrl-hide rounded-md border border-gray-200">
+      <div className="overflow-auto md:h-[calc(100vh-175px)] h-[calc(100vh-240px)] scrl-hide rounded-md border border-gray-200">
         <ReportsTable
           paged={pagedReports}
           handleDelete={handleDelete}

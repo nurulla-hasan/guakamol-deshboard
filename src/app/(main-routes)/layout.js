@@ -1,14 +1,13 @@
 "use client";
-import '../globals.css';
-import { useState } from "react";
+import { useState, useEffect } from "react"; 
 import { usePathname } from "next/navigation";
 import { TbLayoutDashboard, TbReportSearch } from "react-icons/tb";
 import Topbar from '@/components/layout/Topbar';
-import PrivateRoute from '@/components/privet-route/PrivetRoute';
 import Sidebar from '@/components/layout/Sidebar';
 import { FaNutritionix } from 'react-icons/fa';
 import { PiUsersThree } from 'react-icons/pi';
 import { MdOutlineManageAccounts, MdOutlineRestaurantMenu } from 'react-icons/md';
+
 
 const menuItems = [
   { label: "Dashboard", href: "/", icon: <TbLayoutDashboard size={20} /> },
@@ -20,33 +19,59 @@ const menuItems = [
 ];
 const settingMenu = [
   { label: "Profile", href: "/settings/profile" },
-  { label: "FAQ", href: "/settings/FAQ" },
+  { label: "About Us", href: "/settings/about-us" },
   { label: "Terms & Condition", href: "/settings/terms" },
   { label: "Privacy Policy", href: "/settings/privacy-policy" },
 ];
 
 export default function MainRouteLayout({ children }) {
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  const pathname = usePathname();
+    const [settingsOpen, setSettingsOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const pathname = usePathname();
 
-  return (
-      <>
-          <div className="min-h-screen flex">
-            {/* Sidebar */}
-            <div className='w-56 flex flex-col justify-between pb-10 bg-layout-bg'>
-              <Sidebar {...{menuItems, setSettingsOpen, settingsOpen, pathname, settingMenu}}/>
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setIsSidebarOpen(true);
+            } else {
+                setIsSidebarOpen(false);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return (
+            <div className="min-h-screen flex relative">
+                {/* Sidebar */}
+                <Sidebar
+                    menuItems={menuItems}
+                    setSettingsOpen={setSettingsOpen}
+                    settingsOpen={settingsOpen}
+                    pathname={pathname}
+                    settingMenu={settingMenu}
+                    isSidebarOpen={isSidebarOpen} 
+                    setIsSidebarOpen={setIsSidebarOpen}
+                />
+
+                <main
+                    className={`flex-1 flex flex-col transition-all duration-300
+                               ${isSidebarOpen && window.innerWidth < 768 ? 'overflow-hidden h-screen' : 'overflow-auto'}
+                               md:overflow-auto md:h-auto`}
+                >
+                    {/* Top bar */}
+                    <Topbar
+                        isSidebarOpen={isSidebarOpen}
+                        setIsSidebarOpen={setIsSidebarOpen}
+                    />
+
+                    {/* Page content */}
+                    <div className="bg-content-bg h-[calc(100vh-80px)] overflow-auto scrl-hide rounded-tl-sm p-3">
+                        {children}
+                    </div>
+                </main>
             </div>
-
-            <main className="flex-1 overflow-auto scrl-hide">
-              {/* Top bar */}
-              <Topbar />
-
-              {/* Page content */}
-                <div className="bg-content-bg h-[calc(100vh-80px)] overflow-auto scrl-hide rounded-tl-sm p-3">
-                  {children}
-                </div>
-            </main>
-          </div>
-      </>
-  );
+    );
 }

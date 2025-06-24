@@ -143,7 +143,7 @@ const ProfilePage = () => {
                 </div>
 
                 {/* Quick Info */}
-                <div className="mt-4 space-y-2">
+                {/* <div className="mt-4 space-y-2">
                   <div className="flex items-center gap-2 text-xs text-gray-600">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     <span>Last updated: Today</span>
@@ -152,7 +152,7 @@ const ProfilePage = () => {
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                     <span>Account verified</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ const ProfilePage = () => {
                 <div className="flex gap-1 bg-white rounded-sm border border-gray-200 shadow-sm overflow-hidden">
                   <button
                     onClick={() => setActiveTab("profile")}
-                    className={`relative py-3 px-6 text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                    className={`relative py-2 px-6 text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                       activeTab === "profile"
                         ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
                         : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"
@@ -176,7 +176,7 @@ const ProfilePage = () => {
                   </button>
                   <button
                     onClick={() => setActiveTab("password")}
-                    className={`relative py-3 px-6 text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
+                    className={`relative py-2 px-6 text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                       activeTab === "password"
                         ? "bg-gradient-to-r from-primary to-primary/80 text-white shadow-md"
                         : "text-gray-600 hover:text-gray-800 hover:bg-gray-50"

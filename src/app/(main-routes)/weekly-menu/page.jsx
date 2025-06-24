@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { IoIosArrowDown } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import { IoAdd } from "react-icons/io5";
 import MenuViewModal from "@/components/modal/menu-view-modal/MenuViewModal";
 import AddMenuModal from "@/components/modal/add-menu-modal/AddMenuModal";
@@ -35,7 +35,6 @@ const WeeklyMenuPage = () => {
 
   const selectedMealType = watch("selectedMealType");
 
-
   // Meal type options
   const mealTypeOptions = [
     { value: "breakfast", label: "Breakfast" },
@@ -54,7 +53,6 @@ const WeeklyMenuPage = () => {
     console.log(_id);
   };
 
-
   const handleAddMenu = () => {
     console.log("add button clicked");
     setAddMenuModal(true);
@@ -65,11 +63,11 @@ const WeeklyMenuPage = () => {
 
   return (
     <PageContainer>
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex flex-wrap gap-2 justify-between items-center mb-2">
         <h1 className="font-medium">Weekly Menu</h1>
-        <div className="flex gap-2 items-end">
+        <div className="flex flex-wrap gap-2 items-end">
           {/* DatePicker Component */}
-          <div className="min-w-[140px] relative">
+          <div className="min-w-[140px]k relative">
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -78,10 +76,16 @@ const WeeklyMenuPage = () => {
               customInput={
                 <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-200">
                   <Calendar className="h-4 w-4" />
-                  {startDate ? format(startDate, 'dd MMMM yyyy') : 'Select Date'}
+                  {startDate
+                    ? format(startDate, "dd MMMM yyyy")
+                    : "Select Date"}
                   <IoIosArrowDown className="ml-1" />
                 </button>
               }
+              popperContainer={({ children }) => (
+                <div style={{ zIndex: 9999 }}>{children}</div>
+              )}
+              popperPlacement="bottom-start"
             />
           </div>
 
@@ -100,7 +104,10 @@ const WeeklyMenuPage = () => {
 
           {/* Add Button */}
           <div>
-            <button onClick={handleAddMenu} className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+            <button
+              onClick={handleAddMenu}
+              className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded-sm text-xs font-medium text-gray-700 hover:bg-gray-50 transition-all duration-300 cursor-pointer"
+            >
               <IoAdd className="h-4 w-4" />
               Add Menu
             </button>
@@ -109,7 +116,7 @@ const WeeklyMenuPage = () => {
       </div>
 
       {/* table */}
-      <div className="overflow-auto h-[76vh] scrl-hide rounded-md border border-gray-200">
+      <div className="overflow-auto md:h-[calc(100vh-175px)] h-[calc(100vh-240px)] scrl-hide rounded-md border border-gray-200">
         <WeeklyMenuTable
           paged={paged}
           handleBlock={handleBlock}
@@ -118,7 +125,9 @@ const WeeklyMenuPage = () => {
       </div>
 
       {/* Pagination */}
-      <Pagination {...{ page, setPage, pageCount, pageSize, filtered: weeklyMenu }} />
+      <Pagination
+        {...{ page, setPage, pageCount, pageSize, filtered: weeklyMenu }}
+      />
 
       {/* View Modal */}
       <MenuViewModal

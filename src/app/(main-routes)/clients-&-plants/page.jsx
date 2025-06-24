@@ -28,7 +28,6 @@ const clientsAndPlants = () => {
   // handle block
   const handleBlock = (_id) => {
     setConfirmModal(true);
-    // alert("Blocked")
     console.log(_id);
   };
 
@@ -44,10 +43,10 @@ const clientsAndPlants = () => {
 
     <PageContainer>
       {/* header + search */}
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between gap-2 flex-wrap mb-2">
         <h1 className="font-medium">Client & Plants</h1>
         <div className="flex items-center gap-5">
-          <button onClick={() => setAddModal(true)} className="bg-primary hover:bg-primary/80 text-xs font-medium text-white px-2 py-1 rounded-sm cursor-pointer transition-all duration-500">
+          <button onClick={() => setAddModal(true)} className="bg-primary hover:bg-primary/80 text-sm font-medium text-white px-2 py-1 rounded-sm cursor-pointer transition-all duration-500">
             + Add Client
           </button>
 
@@ -70,7 +69,7 @@ const clientsAndPlants = () => {
       </div>
 
       {/* table */}
-      <div className="overflow-auto h-[76vh] scrl-hide rounded-md border border-gray-200">
+      <div className="md:h-[calc(100vh-175px)] h-[calc(100vh-200px)] overflow-auto scrl-hide rounded-md border border-gray-200">
         <ClientsAndPlantsTable paged={paged} handleBlock={handleBlock} handleView={handleView} />
       </div>
 

@@ -4,12 +4,12 @@ import './globals.css';
 import store from "@/redux/store";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "react-hot-toast";
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className='container mx-auto max-w-full'>
+      <body className='container mx-auto max-w-[1920px]'>
         <Provider store={store}>
           {/* <PrivateRoute> */}
             <NextTopLoader

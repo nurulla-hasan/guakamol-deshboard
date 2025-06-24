@@ -80,8 +80,8 @@ const Terms = () => {
           </LexicalComposer>
         </div>
 
-        <div className="flex justify-center bg-[#f8f8f8]">
-          <button onClick={handleSave} className="px-6 py-2 bg-[#5CA97E] text-white rounded-sm text-sm hover:bg-[#549972] transition cursor-pointer">
+        <div className="flex justify-center">
+         <button onClick={handleSave} className="px-4 py-1 bg-primary text-white rounded-xs text-sm hover:bg-primary/90 transition cursor-pointer">
             Save Changes
           </button>
         </div>

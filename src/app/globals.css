@@ -18,6 +18,36 @@ body {
 }
 
 
+/* Custom utility classes for responsive design */
+@layer utilities {
+  .sidebar-enter {
+    transform: translateX(-100%);
+  }
+  .sidebar-enter-active {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+  .sidebar-exit {
+    transform: translateX(0);
+  }
+  .sidebar-exit-active {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in;
+  }
+}
+
+/* For overlay when sidebar is open on small screens */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 40; /* Should be lower than sidebar but higher than content */
+  display: block; /* Hidden by default, shown by JS */
+}
+
 .scrl-hide::-webkit-scrollbar {
   display: none;
 }

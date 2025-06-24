@@ -37,7 +37,7 @@ const clientsAndPlants = () => {
   return (
     <PageContainer>
       {/* header + search */}
-      <div className="flex justify-between mb-2">
+      <div className="flex flex-wrap gap-2 justify-between mb-2">
         <h1 className="font-medium">User Management</h1>
         <div className="relative">
           <FiSearch
@@ -57,7 +57,7 @@ const clientsAndPlants = () => {
       </div>
 
       {/* table */}
-      <div className="overflow-auto h-[76vh] scrl-hide rounded-md border border-gray-200">
+      <div className="overflow-auto md:h-[calc(100vh-175px)] h-[calc(100vh-200px)] scrl-hide rounded-md border border-gray-200">
         <UserManagementTable
           paged={paged}
           handleBlock={handleBlock}

@@ -56,8 +56,8 @@ export const notifications = [
 
 export const user = {
   "_id": "admin001",
-  "userName": "Admin User",
-  "email": "admin@example.com",
+  "userName": "Nurulla Hasan",
+  "email": "nurullahasan@gmail.com",
   "role": "SuperAdmin",
   "status": "Active",
   "lastLogin": "2025-06-23T22:04:28Z",

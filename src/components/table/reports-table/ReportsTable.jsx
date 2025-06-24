@@ -1,4 +1,3 @@
-// src/components/table/reports-table/ReportsTable.jsx
 "use client";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";

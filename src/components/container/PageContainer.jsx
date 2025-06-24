@@ -2,7 +2,7 @@
 
 const PageContainer = ({children}) => {
     return (
-        <div className=''>
+        <div className='h-full'>
             {children}
         </div>
     );

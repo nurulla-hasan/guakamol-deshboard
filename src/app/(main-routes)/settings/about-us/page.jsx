@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
     <PageContainer>
       <div className="flex flex-col gap-6">
         <div className="h-[78vh] overflow-auto scrl-hide">
-          <h2 className="text-xl font-medium text-gray-800">Privacy Policy</h2>
+          <h2 className="text-xl font-medium text-gray-800">About Us</h2>
           <LexicalComposer initialConfig={editorConfig}>
             <ToolbarPlugin />
             <RichTextPlugin
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="flex justify-center">
-         <button onClick={handleSave} className="px-4 py-1 bg-primary text-white rounded-xs text-sm hover:bg-primary/90 transition cursor-pointer">
+          <button onClick={handleSave} className="px-4 py-1 bg-primary text-white rounded-xs text-sm hover:bg-primary/90 transition cursor-pointer">
             Save Changes
           </button>
         </div>

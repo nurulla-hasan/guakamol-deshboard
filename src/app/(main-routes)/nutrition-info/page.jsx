@@ -94,11 +94,11 @@ const NutritionPage = () => {
   return (
     <PageContainer>
       {/* header + select dish */}
-      <div className="flex justify-between mb-2">
-        <div className="flex items-center justify-center gap-10">
+      <div className="flex flex-wrap gap-2 justify-between mb-2">
+        <div className="flex flex-wrap items-center md:justify-center md:gap-10 gap-2">
           <h1 className="font-medium">Nutrition & Ingredients Info</h1>
           {/* Tab Navigation */}
-          <div className="flex bg-white rounded-sm border border-gray-200 shadow-sm overflow-hidden">
+          <div className="flex flex-wrap gap-2 bg-white rounded-sm border border-gray-200 shadow-sm">
           <button
             onClick={() => {
               setActiveTab("nutrition")
@@ -155,7 +155,7 @@ const NutritionPage = () => {
 
 
       {/* Table based on active tab */}
-      <div className="overflow-auto h-[75vh] scrl-hide rounded-md border border-gray-200">
+      <div className="overflow-auto md:h-[calc(100vh-175px)] h-[calc(100vh-240px)] scrl-hide rounded-md border border-gray-200">
         {activeTab === "nutrition" ? (
           <NutritionTable
             paged={pagedData}
